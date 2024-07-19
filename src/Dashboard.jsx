@@ -65,9 +65,9 @@ const Dashboard = () => {
             </AbsoluteCenter>
             
             <Card overflow={"hidden"} bg={"#FE5353"} borderTopRadius={"xl"} top={-3}>
-                {/* <CardHeader p={1.5} px={4} borderTopRadius={"xl"}>
-                    <Text fontSize={"lg"} fontWeight={"bold"} color={"white"} fontFamily={"cursive"} letterSpacing={"-0.05em"}>Activities</Text>
-                </CardHeader> */}
+                <CardHeader p={1.5} px={4} borderTopRadius={"xl"}>
+                    <Text fontSize={"lg"} fontWeight={"bold"} color={"white"} fontFamily={"fantasy"} letterSpacing={"-0.0e4m"}>Activities</Text>
+                </CardHeader>
                 <CardBody p={3} py={4} overflow={"hidden"} borderTopRadius={"lg"} bg="white">
                     <Flex align={"center"} justify={"space-between"} borderTopRadius={"lg"} flexWrap={"wrap"}
                     rowGap={4}>
@@ -95,7 +95,7 @@ const Dashboard = () => {
 
             <Stack p={3} m="-1" mt={2} overflow={"hidden"} borderRadius={"md"}>
                 <Flex alignItems={"center"} justify={"space-between"} px={2}>
-                    <Text fontFamily={"cursive"} fontSize={"lg"} letterSpacing={"-0.05em"} mb={2} color={"black"}>Lainnya</Text>
+                    <Text fontFamily={"fantasy"} fontSize={"lg"} letterSpacing={"-0.04em"} mb={2} color={"black"}>Lainnya</Text>
                     <FaAnglesDown color="black"/>
                 </Flex>
                 <Flex align={"center"} justify={"space-evenly"}
