@@ -5,6 +5,7 @@ import { FaAnglesDown } from "react-icons/fa6";
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 import Lainnya from "./components/Lainnya";
 import Activities from "./components/Activities";
+import Comment from "./Comment";
 
 
 const Dashboard = () => {
@@ -99,7 +100,8 @@ const Dashboard = () => {
                     <Lainnya imgUrl={"schedule.png"} title={"Schedule"}/>
                     <Lainnya imgUrl={"structure.png"} title={"Structure"}/>
                     <Lainnya imgUrl={"teacher.png"} title={"Teachers"}/> */}
-                    <Lainnya imgUrl={"comment.png"} title={"Comment"}/>
+                    {/* <Lainnya imgUrl={"comment.png"} title={"Comment"}/> */}
+                    <Comment />
 
                 </Flex>
             </Stack>
