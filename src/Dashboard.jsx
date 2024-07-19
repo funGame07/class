@@ -11,7 +11,7 @@ const Dashboard = () => {
     const [color, setColor] = useState("linear(to-b, rgba(255, 172, 101), gray.100)")
     const [images, setImages] = useState("pc1.png")
     const [imgIndex, setImgIndex] = useState(0)
-    const allImages = ["pc1.png", "pc2.png", "pc3.png", "pc4.png", "pc5.png", "pc6.png", "pc7.png"]
+    const allImages = ["pc1.png", "pc2.png", "pc3.png", "pc4.png", "pc5.png", "pc6.png", "pc7.png", "pc8.png"]
 
     function toggleColor(){
         setColor(color != "linear(to-b, red.400, gray.100)" ? 
@@ -83,7 +83,7 @@ const Dashboard = () => {
                         <Activities imgUrl={"clean.png"} title={"Class Cleanliness"} padd={2} bgUrl={"clpc.png"}/>
                         <Activities imgUrl={"schedules.png"} title={"Class Schedule"} padd={3} bgUrl={"scpc.png"}/>
                         <Activities imgUrl={"structures.png"} title={"Class Structure"} padd={2} bgUrl={"abpc.png"}/>
-                        <Activities imgUrl={"teachers.png"} title={"Class Violation"} padd={3} bgUrl={"tcpc.png"}/>
+                        <Activities imgUrl={"teachers.png"} title={"Class's Teachers"} padd={3} bgUrl={"tcpc.png"}/>
                     </Flex>
                 </CardBody>
             </Card>
