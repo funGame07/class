@@ -51,7 +51,7 @@ const Dashboard = () => {
                         <CardHeader p={2} pl={5}>
                             <Image src="image.png" w={10}/>
                         </CardHeader>
-                        <CardBody p={2} pl={2} display={"flex"} flexDirection={"column"} lineHeight={1}>
+                        <CardBody p={2} pl={2} display={"flex"} flexDirection={"column"} lineHeight={1} color={"black"}>
                             <Text fontSize={"sm"} fontWeight={"bold"} >Admin field is here:</Text>
                             <Text fontSize={"sm"} fontWeight={"semibold"} >come for an edit</Text>
                         </CardBody>
