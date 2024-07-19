@@ -25,7 +25,7 @@ const Dashboard = () => {
 
   return (
     <Container w="100vw" h="100vh" p={0} overflowX={"hidden"} 
-    bgGradient={"linear(to-b, rgba(255, 172, 101), gray.100, gray.100)"}>
+    bgGradient={"linear(to-b, rgba(255, 172, 101), gray.100)"}>
         <Box h="38%" borderBottomRadius={"xl"} overflow={"hidden"} position={"relative"}>
             <Image src={images} objectFit={"fill"} h="100%" w={"100%"}/>
             <Button bg={"#FF8166"} pos={"absolute"} top={0} right="0" size={"fit"} 
@@ -44,7 +44,7 @@ const Dashboard = () => {
             </AbsoluteCenter>
             
         </Box>
-        <Box position={"relative"} w={"100%"} p="3%" py={"20%"} bg={"white"}>
+        <Box position={"relative"} w={"100%"} p="3%" py={"20%"} >
             <AbsoluteCenter top={1} w="93%">
                 <Card display={"flex"} bg={"white"}>
                     <Box display={"flex"} alignItems={"center"}>
