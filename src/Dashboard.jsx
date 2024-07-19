@@ -1,17 +1,21 @@
 import { Container, Image, Box, Button, Text, AbsoluteCenter, Flex, Stack} from "@chakra-ui/react"
 import { useState, useEffect } from "react"
-import { FiSun } from "react-icons/fi";
 import { GiMoon } from "react-icons/gi";
 import { FaAnglesDown } from "react-icons/fa6";
-
-
 import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react'
 
 
 const Dashboard = () => {
+    const [color, setColor] = useState("linear(to-b, rgba(255, 172, 101), gray.100)")
     const [images, setImages] = useState("pc1.png")
     const [imgIndex, setImgIndex] = useState(0)
     const allImages = ["pc1.png", "pc2.png", "pc3.png", "pc4.png", "pc5.png", "pc6.png", "pc7.png"]
+
+    function toggleColor(){
+        setColor(color != "linear(to-b, red.400, gray.100)" ? 
+                            "linear(to-b, red.400, gray.100)" : 
+                            "linear(to-b, rgba(255, 172, 101), gray.100)")
+    }
 
     useEffect(() =>{
         const myId = setInterval(() => {
@@ -25,13 +29,13 @@ const Dashboard = () => {
 
   return (
     <Container w="100vw" h="100vh" p={0} overflowX={"hidden"} 
-    bgGradient={"linear(to-b, rgba(255, 172, 101), gray.100)"}>
+    bgGradient={color}>
         <Box h="38%" borderBottomRadius={"xl"} overflow={"hidden"} position={"relative"}>
             <Image src={images} objectFit={"fill"} h="100%" w={"100%"}/>
             <Button bg={"#FF8166"} pos={"absolute"} top={0} right="0" size={"fit"} 
             px={3} py={1} m={2} mt="5" sx={{':focus': { outline: 'none'}}} borderRadius={"full"}
-            gap={1} border={"1px"} borderColor={"#FF8166"}>
-                {true ? <GiMoon color={"white"}/> : <FiSun color={"white"}/>}
+            gap={1} border={"1px"} borderColor={"#FF8166"} onClick={toggleColor}>
+                <GiMoon color={"white"}/>
                 {/* <Text fontSize={"small"} color={"white"}>Mode</Text> */}
             </Button>
             <AbsoluteCenter>
