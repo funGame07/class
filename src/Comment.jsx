@@ -1,4 +1,5 @@
 import Lainnya from "./components/Lainnya"
+import { Toast, useToast } from "@chakra-ui/react"
 import {
     Drawer,
     DrawerBody,
@@ -15,17 +16,61 @@ import {
     Button,
     useDisclosure
   } from '@chakra-ui/react'
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 function Comment() {
+    const [isLoading, setIsLoading] = useState(false)
+    const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const firstField = useRef()
 
-    function commentApi(e){
+    async function commentApi(e){
+        setIsLoading(true)
         const myForm = document.getElementById("comment-form")
         e.preventDefault()
-        console.log(myForm.name.value)
-        console.log(myForm.comment.value)
+        const name = myForm.name.value || "Anonim"
+        const comment = myForm.comment.value
+        if(!myForm.comment.value){
+            setIsLoading(false)
+            toast({
+                status: "error",
+                title: "Commentnya mana?",
+                description: "comment required",
+                isClosable: true,
+                duration: 3000
+            })
+            return
+        }
+        try{
+            // const response = await fetch("", {
+            //     method: "POST",
+            //     headers: {"Content-Type": "application/json"},
+            //     body: JSON.stringify({
+            //         name: name,
+            //         comment
+            //     })
+            // })
+            // const data = await response.json()
+            if(true){
+                toast({
+                    status: "success",
+                    title: "Ty commentnya :)",
+                    description: "comment yg bagus :v",
+                    isClosable: true
+                })
+            }
+            
+        }catch(err){
+            toast({
+                status: "error",
+                title: "Oops ada error",
+                description: "sory",
+                isClosable: true
+            })
+        }finally{
+            setIsLoading(false)
+        }
+        
     }
   
     return (
@@ -43,7 +88,7 @@ function Comment() {
             <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader borderBottomWidth='1px'>
-                Comment
+                Comment dong
             </DrawerHeader>
 
             <DrawerBody>
@@ -54,8 +99,8 @@ function Comment() {
                             <Input name="name" placeholder='nama (kosong pun gpp)'/>
                         </Box>
                         <Box mt={4}>
-                            <FormLabel htmlFor='desc'>Description</FormLabel>
-                            <Textarea name="comment" id='comment' placeholder="bagus/jelek/keren/saran/dll"/>
+                            <FormLabel htmlFor='desc'>Comment</FormLabel>
+                            <Textarea name="comment" id='comment' placeholder="bagus/jelek/keren/saran/bebas/ dll"/>
                         </Box>
                     </form>
                 </Stack>
@@ -65,7 +110,8 @@ function Comment() {
                 <Button variant='outline' mr={3} onClick={onClose}>
                 Cancel
                 </Button>
-                <Button colorScheme='blue' type="submit" form="comment-form">Submit</Button>
+                <Button colorScheme='blue' type="submit" form="comment-form"
+                spinnerPlacement='start' loadingText={"Loading"} isLoading={isLoading}>Submit</Button>
             </DrawerFooter>
             </DrawerContent>
         </Drawer>
